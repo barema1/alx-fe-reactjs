@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
@@ -9,30 +9,28 @@ import RecommendationsList from "./components/RecommendationsList";
 
 function App() {
   return (
-    <Router>
-      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <h1 style={{ textAlign: "center" }}>Recipe Sharing App</h1>
+    <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+      <h1 style={{ textAlign: "center" }}>Recipe Sharing App</h1>
 
-        <Routes>
-          {/* HOME PAGE */}
-          <Route
-            path="/"
-            element={
-              <>
-                <SearchBar />
-                <AddRecipeForm />
-                <RecipeList />
-                <FavoritesList />
-                <RecommendationsList />
-              </>
-            }
-          />
+      <Routes>
+        {/* HOME PAGE */}
+        <Route
+          path="/"
+          element={
+            <>
+              <SearchBar />
+              <AddRecipeForm />
+              <RecipeList />
+              <FavoritesList />
+              <RecommendationsList />
+            </>
+          }
+        />
 
-          {/* RECIPE DETAILS PAGE */}
-          <Route path="/recipe/:id" element={<RecipeDetails />} />
-        </Routes>
-      </div>
-    </Router>
+        {/* DETAILS PAGE */}
+        <Route path="/recipe/:id" element={<RecipeDetails />} />
+      </Routes>
+    </div>
   );
 }
 
