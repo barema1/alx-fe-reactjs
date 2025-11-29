@@ -8,7 +8,7 @@ function Search() {
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevents page reload
+    e.preventDefault(); 
 
     if (!username.trim()) return;
 
