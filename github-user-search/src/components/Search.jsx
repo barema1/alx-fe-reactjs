@@ -16,7 +16,7 @@ function Search() {
     setError("");
     setResults([]);
 
-fetchUserData(username).catch(() => {});
+await fetchUserData(username);
 
 
     try {
