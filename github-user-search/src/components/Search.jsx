@@ -19,7 +19,7 @@ function Search() {
       const data = await fetchAdvancedUsers(username, location, minRepos);
       setResults(data.items);
     } catch (err) {
-      setError("Looks like we can't find users with that criteria.");
+      setError("Looks like we can't find the user");
     }
 
     setLoading(false);
