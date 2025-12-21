@@ -4,16 +4,14 @@ import ProtectedRoute from './components/ProtectedRoute';
 import BlogPost from './components/BlogPost';
 
 function App() {
-  const isAuthenticated = true;
-
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<div>Home Page</div>} />
+        <Route path="/" element={<div>Home Page (Login here by setting localStorage 'auth' to 'true')</div>} />
         <Route 
           path="/profile/*" 
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           } 
